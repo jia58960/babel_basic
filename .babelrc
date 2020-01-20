@@ -1,0 +1,19 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+       {
+         "useBuiltIns": "usage",
+         "corejs": 3
+       }
+    ]
+  ],
+  "plugins": [
+    [
+      "@babel/plugin-transform-runtime",
+      {
+        "corejs": 3 // 不加此项会污染全局环境，打包后代码只有28KB。加了此项，不会污染全局环境，打包后代码有35KB。
+      }
+    ]
+  ]
+}
